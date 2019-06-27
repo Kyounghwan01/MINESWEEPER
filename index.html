@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>지뢰찾기_ver1</title>
+  </head>
+  <body>
+    <h1>MINESWEEPER !</h1>
+    <div class="world">
+      <div class="diff">
+        <button class="btn easy">EASY</button>
+        <button class="btn normal">NORMAL</button>
+        <button class="btn hard">HARD</button>
+      </div>
+      <div class="game">
+        <div class="game-header">
+          <div class="mine-count">
+            <p class="mineCounter">0</p>
+            <!-- <img src="http://minesweeperonline.com/sprite100.gif" 0px 0px> -->
+            <!-- <img src="https://minesweeper.online/img/skins/hd/mine.svg" width=10px height=10px></img> -->
+          </div>
+          <div class="refresh">
+            <button class="refreshBtn"><i class="far fa-smile"></i></button>
+          </div>
+          <div class="timer">
+            <p class="realTimer">0</p>
+          </div>
+        </div>
+        <div class="game-body">
+          <table id="table">
+            <thead id="tHead"><td class="explain">난이도 클릭!</td></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

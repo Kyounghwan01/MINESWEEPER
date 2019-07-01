@@ -250,8 +250,7 @@ function tableMaker(text) {
   for (let i = 0; i < ranMineList.length; i++) {
     let col = Math.floor(ranMineList[i] / hor);
     let row = ranMineList[i] % hor;
-    tbody.children[col].children[row].innerHTML =
-      "<img src='https://minesweeper.online/img/skins/hd/closed.svg' width='25px' height='25px' />";
+    tbody.children[col].children[row].innerHTML = "";
     tbody.children[col].children[row].classList.add("MINE");
     dataset[col][row] = 코드표.지뢰;
   }

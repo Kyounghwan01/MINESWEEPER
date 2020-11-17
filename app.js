@@ -42,21 +42,21 @@ function del() {
 function timer() {
   let time = 0;
   if (timerFun) clearInterval(timerFun);
-  timerFun = setInterval(function() {
+  timerFun = setInterval(function () {
     if (time > 999) time = 0;
     realTimer.textContent = time;
     time++;
   }, 1000);
 }
 
-easyBtn.addEventListener("click", function() {
+easyBtn.addEventListener("click", function () {
   refreshBtn.classList.remove("regame");
   difficulty = 1;
   del();
   timer();
   tableMaker("easy");
 });
-normalBtn.addEventListener("click", function() {
+normalBtn.addEventListener("click", function () {
   refreshBtn.classList.remove("regame");
   difficulty = 2;
   del();
@@ -64,7 +64,7 @@ normalBtn.addEventListener("click", function() {
   tableMaker("normal");
 });
 
-hardBtn.addEventListener("click", function() {
+hardBtn.addEventListener("click", function () {
   refreshBtn.classList.remove("regame");
   difficulty = 3;
   del();
@@ -72,7 +72,7 @@ hardBtn.addEventListener("click", function() {
   tableMaker("hard");
 });
 
-refreshBtn.addEventListener("click", function() {
+refreshBtn.addEventListener("click", function () {
   refreshBtn.classList.remove("regame");
   if (difficulty === 1) {
     tableMaker("easy");
@@ -117,7 +117,7 @@ function tableMaker(text) {
     )[0];
     ranMineList.push(mineNumber);
   }
-  
+
   for (let i = 0; i < hor; i++) {
     let arr = [];
     let tr = document.createElement("tr");
@@ -128,7 +128,7 @@ function tableMaker(text) {
       td.classList.add("chance");
       td.addEventListener("contextmenu", rightClick);
 
-      td.addEventListener("click", function(e) {
+      td.addEventListener("click", function (e) {
         if (isReady) return;
         var parentTr = e.currentTarget.parentNode;
         var parentBody = e.currentTarget.parentNode.parentNode;
@@ -163,7 +163,8 @@ function tableMaker(text) {
           isReady = true;
           clearInterval(timerFun);
           refreshBtn.classList.add("regame");
-        } else {clearInterval(timerFun);
+        } else {
+          clearInterval(timerFun);
           var 주변 = [
             dataset[blankCol][blank - 1],
             dataset[blankCol][blank + 1]
@@ -182,7 +183,7 @@ function tableMaker(text) {
               dataset[blankCol + 1][blank + 1]
             ]);
           }
-          var 주변지뢰개수 = 주변.filter(function(v) {
+          var 주변지뢰개수 = 주변.filter(function (v) {
             return [코드표.지뢰, 코드표.깃발지뢰, 코드표.물음표지뢰].includes(
               v
             );
@@ -212,10 +213,10 @@ function tableMaker(text) {
               ]);
             }
             주변칸
-              .filter(function(v) {
+              .filter(function (v) {
                 return !!v;
               })
-              .forEach(function(o) {
+              .forEach(function (o) {
                 let blank = Array.prototype.indexOf.call(parentTr.children, o);
                 if (dataset[blankCol][blank] !== 코드표.연칸) {
                   o.click();
@@ -230,7 +231,7 @@ function tableMaker(text) {
           refreshBtn.classList.add("regame");
         }
       });
-      td.addEventListener("mousedown", function(e) {
+      td.addEventListener("mousedown", function (e) {
         var 부모tr = e.currentTarget.parentNode;
         var 부모tbody = e.currentTarget.parentNode.parentNode;
         var 칸 = Array.prototype.indexOf.call(부모tr.children, e.currentTarget);
@@ -238,7 +239,7 @@ function tableMaker(text) {
         if (dataset[줄][칸] === 코드표.연칸) return;
         td.classList.add("mouseDown");
       });
-      td.addEventListener("mouseup", function() {
+      td.addEventListener("mouseup", function () {
         td.classList.remove("mouseDown");
       });
       tr.appendChild(td);
@@ -309,3 +310,5 @@ function rightClick(e) {
     refreshBtn.classList.add("regame");
   }
 }
+
+// endLine..

@@ -310,5 +310,3 @@ function rightClick(e) {
     refreshBtn.classList.add("regame");
   }
 }
-
-// endLine..
